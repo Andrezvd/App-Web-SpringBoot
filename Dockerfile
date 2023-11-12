@@ -5,7 +5,8 @@ FROM nginx
 WORKDIR /usr/share/nginx/html
 
 # Copia solo los archivos necesarios para el frontend
-COPY front/templates /usr/share/nginx/html
+COPY front/templates/ /usr/share/nginx/html
+
 
 # Expone el puerto 80 (predeterminado para HTTP)
 EXPOSE 80
