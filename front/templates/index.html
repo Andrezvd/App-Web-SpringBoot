@@ -3,17 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link rel="icon" href="./icons/icon.png">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
     <title>AppWeb</title>
 </head>
 <body>
-    <h1 class = 'red '>AY PAPA QUE FELISIDA</h1>
+    <nav-bar id="barra-de-navegacion">
+        <div class="barra">
+            <ul class="botones-barra">
+                <li class="boton-rojo">
+                    <a href="#" class="ordenar-horario">horario</a>
+                </li>
+                <li>
+                    <a href="#" class="juego">jugar</a>
+                </li>
+            </ul>
+        </div>
+    </nav-bar>
 
-    
-    <button onclick="obtenerSaludo()">Obtener Saludo</button>
-    <div id="resultado"></div>
-    
+    <div class="espacio-30px"></div>
+    <section id="saludo">
+        <button onclick="obtenerSaludo()">Obtener Saludo</button>
+        <div id="resultado"></div>
+    </section>
 
-<script src="./index.js"></script>
+    <!-- Agregar al formulario para ingresar materias -->
+    <form id="formularioMaterias">
+        <label for="materia">Materia:</label>
+        <input type="text" id="materia" required>
+    
+        <label for="ponderacion">Ponderación:</label>
+        <input type="number" id="ponderacion" required>
+    
+        <button type="button" onclick="agregarMateria()">Enviar Materia</button>
+    </form>
+
+    <div class="espacio-30px"></div>
+
+    <table>
+        <thead>
+          <tr>
+            <th>Materia</th>
+            <th>Ponderación</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpoTabla"></tbody>
+      </table>
+      
+
+
+
+
+<script src="./js/index.js"></script>
 </body>
 </html>
