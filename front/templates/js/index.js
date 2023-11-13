@@ -63,3 +63,4 @@ async function obtenerYMostrarMaterias() {
         console.error('Error al obtener materias:', error);
     }
 }
+

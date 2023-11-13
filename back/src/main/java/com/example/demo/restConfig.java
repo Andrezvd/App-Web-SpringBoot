@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -35,6 +36,29 @@ public class restConfig {
         // Ordenar las materias por ponderación de menor a mayor
         materias.sort(Comparator.comparingInt(Materia::getPonderacion));
         return materias;
+    }
+
+    @PostMapping("/iniciar")
+    public String iniciarJuego() {
+        Game game = new Game(); // Crear una nueva instancia de Game para cada solicitud
+        game.reiniciarJuego();
+        return "Juego iniciado. Adivina el número del 1 al 100.";
+    }
+
+    @GetMapping("/estado")
+    public String obtenerEstadoJuego() {
+        Game game = new Game(); // Crear una nueva instancia de Game para cada solicitud
+        if (game.isJuegoTerminado()) {
+            return "El juego ha terminado. Reinicia para jugar de nuevo.";
+        } else {
+            return "El juego está en curso. Adivina el número del 1 al 100.";
+        }
+    }
+
+    @PostMapping("/adivinar")
+    public String intentarAdivinar(@RequestParam int intento) {
+        Game game = new Game(); // Crear una nueva instancia de Game para cada solicitud
+        return game.intentarAdivinar(intento);
     }
 
 }

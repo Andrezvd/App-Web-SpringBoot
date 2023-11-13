@@ -9,6 +9,10 @@
   height: 30px;
 }
 
+.espacio-100px{
+  height: 100px;
+}
+
 .boton-rojo{
   color: red;
 }
@@ -32,4 +36,11 @@
   height: 100%;
   background-color: aqua;
   border-radius: 20px;
+}
+
+.juego{
+  width: 700px;
+  height: 80px;
+  background-color: aqua;
+  border-radius: 10px;
 }

@@ -15,7 +15,7 @@
                     <a href="#" class="ordenar-horario">horario</a>
                 </li>
                 <li>
-                    <a href="#" class="juego">jugar</a>
+                    <a href="#" class="juegos">jugar</a>
                 </li>
             </ul>
         </div>
@@ -47,13 +47,52 @@
             <th>Ponderación</th>
           </tr>
         </thead>
-        <tbody id="cuerpoTabla"></tbody>
-      </table>
-      
+        <tbody id="cuerpoTabla">
 
+        </tbody>
+    </table>
+    
+    <div class="espacio-30px"></div>
+
+    <table border="1">
+        <caption>Matriz Ejemplo</caption>
+        <tbody id="horario-optimo">
+            <tr>
+                <td>1,1</td>
+                <td>1,2</td> 
+                <td>1,3</td>
+            </tr>
+            <tr>
+                <td>2,1</td>
+                <td>2,2</td>
+                <td>2,3</td>
+            </tr>
+            <tr>
+                <td>3,1</td>
+                <td>3,2</td>
+                <td>3,3</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="espacio-100px"></div>
+
+    <h1>Juego de Adivinanzas</h1>
+
+    <div class="juego">
+        <button onclick="iniciarJuego()">Iniciar Juego</button>
+        <p id="estadoJuego"></p>
+        <label for="intento">Tu Intento:</label>
+        <input type="number" id="intento" min="1" max="100">
+        <button onclick="intentarAdivinar()">Intentar Adivinar</button>
+    </div>
+
+    <div class="espacio-100px"></div>
+    
 
 
 
 <script src="./js/index.js"></script>
+<script src="./js/juego.js"></script>
 </body>
 </html>
